@@ -4,13 +4,13 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/node:8.11
-      
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/mongo:3.4.4
 
-    
+
     working_directory: ~/project
     steps:
       - checkout
@@ -22,11 +22,11 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm i 
+      - run: npm i
 
       - run: git remote rename origin sshorigin
       - run: git remote add origin https://github.com/Accedian/datahub-api.git
-      - run: 
+      - run:
           name: Deploying on master branch
           command: |
             # Only push docker image when on master branch on the Accedian project
@@ -34,7 +34,7 @@ jobs:
               npm run deploy
             fi
 
-            #      - run: 
+            #      - run:
             #          name: Deploying on other branch
             #          command: |
             #            # Only push docker image when on master branch on the Accedian project
@@ -49,17 +49,16 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
+
 
 workflows:
   version: 2
-  build_and_release: 
+  build_and_release:
     jobs:
       - build:
           context: org-global
           filters:
             branches:
-              only: 
+              only:
                 - master
                 - /release\/.*/
-
