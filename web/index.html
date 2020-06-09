@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Accedian Skylight Datahub IQ API Specification</title>
+    <title>DataHub API Specification</title>
     <!-- needed for adaptive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!--
+    ReDoc uses font options from the parent element
+    So override default browser styles
+    -->
     <style>
       body {
         margin: 0;
@@ -13,11 +17,8 @@
     </style>
   </head>
   <body>
-      Hello world!
-      <br/>
-
-      This is  test page to start linking to pvql
-      <br/>
-      <a href="pvx/"><h1>Link to PVQL documentation</h1></a>
+    <redoc spec-url="./swagger.json">
+    </redoc>
+    <script src="//cdn.jsdelivr.net/npm/redoc@2.0.0-rc.14/bundles/redoc.standalone.js"> </script>
   </body>
 </html>
