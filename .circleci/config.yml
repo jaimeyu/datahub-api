@@ -25,12 +25,12 @@ jobs:
       - run: npm i 
 
       - run: git remote rename origin sshorigin
-      - run: git remote add origin https://github.com/Accedian/datahub-api.git
+      - run: git remote add origin https://github.com/jaimeyu/datahub-api.git
       - run: 
           name: Deploying on master branch
           command: |
             # Only push docker image when on master branch on the Accedian project
-            if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "release/"* ]] && [ "${CIRCLE_PROJECT_USERNAME}" == "Accedian" ]; then
+            if [[ "${CIRCLE_BRANCH}" == "master" || "${CIRCLE_BRANCH}" == "release/"* ]] && [ "${CIRCLE_PROJECT_USERNAME}" == "jaimeyu" ]; then
               npm run deploy
             fi
 
