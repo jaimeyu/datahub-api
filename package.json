@@ -23,7 +23,8 @@
     "swagger": "swagger-repo",
     "test": "swagger-repo validate",
     "start": "gulp serve",
-    "deploy-branch": "node ./scripts/deploy-branch.js"
+    "deploy-branch": "node ./scripts/deploy-branch.js",
+    "preinstall": "npx npm-force-resolutions"
   },
   "devDependencies": {
     "install-peers": "^1.0.3",
@@ -37,5 +38,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "styled-components": "^4.1.1"
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.3"
   }
 }

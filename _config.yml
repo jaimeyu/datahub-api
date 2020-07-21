@@ -45,4 +45,6 @@ exclude:
   - spec/code_samples/README.md
   - spec/README.md
   - README.md
+  - spec-pvx
+  - web/spec-pvx
 
